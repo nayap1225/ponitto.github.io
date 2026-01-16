@@ -1,0 +1,78 @@
+.prod-price-detail .price-benefit {padding-left: 1.5rem;}
+.form__list .form-control.form-tel #phone1, 
+.form__list .form-control.form-tel #phone2, 
+.form__list .form-control.form-tel #phone3 {padding-left:3rem; text-align:center;}
+/*
+.prod-price-detail .price-benefit .text-del {margin-left: 1rem;}
+.prod-price-detail .price-benefit .text-bold {font-size: 2.2rem;}
+*/
+[class*=btn-core-][class*=-wite] {color: #fff; background: #ffffff; border:1px solid #cccccc;}
+
+/*
+.benefit-card__itmes .info .thumb {flex: 0;}
+*/
+
+/* 폰트 변경으로 간격조정필요 */
+.heder__util > * {padding: 0 2.5rem;}
+.heder__nav--dep2-item a:hover {background: #eaeaea;}
+.prod-price-detail .price-benefit .text-del {margin-left: .4rem;}
+.prod-price-detail .price-benefit .text-bold {font-size: 2.5rem;}
+.form-radio-text label {color: #868686; border: 1px solid #a2a2a2; background: #f4f4f4;}
+.form-radio-text input:checked + label {color: #292929; border-color: #292929;}
+.product-item-options .price-rate-info {border: 1px solid #292929;}
+.product-item-options .price-rate-info .title-area {background: #292929;}
+.product-item-options .price-rate-info .info-area {color: #292929;}
+.product-item-options .item-option .opt-cont.disgrid {display: inline-grid;}
+.product-item-options .price-rate-info .btn_change {color: #292929;}
+.item-option.option-tarde-msg {font-size:1.5rem;}
+
+/*제휴카드*/
+.benefit-card__itmes .info {display: block;}
+
+/* 메뉴추가시 간격 수정 */
+/*
+.heder__nav--dep1-link {padding: 3rem 4rem;}
+*/
+.form-textarea {border: 1px solid #a2a2a2;}
+
+/*
+메인화면 버튼
+*/
+.main__section--cont .bottom-btns-center {margin-top: 4.5rem; text-align: center;}
+.main__section--cont .bottom-btns-center img {cursor:pointer;}
+
+.form-radio-text.lg.benefit_card label{padding-left:2rem; padding-right:2rem; padding-top:1rem; display: flow-root;}
+
+#search_pop.search {position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 5000; background-color:white; border:0.5rem solid #cccccc; border-radius: 1.5rem; display: none;}
+#search_pop.search .box {background-color: #fff; position: relative; border-radius: 10px; width: 50rem; overflow: hidden; border: 1px solid #f4f4f4;}
+#search_pop.search a.close {position: absolute; top: 0; right: 0; display: block; padding: 2rem;}
+#search_pop.search .input {background-color: #fff; padding: 3rem 4rem 3.5rem; box-sizing: border-box;}
+#search_pop.search .input div {position: relative;}
+#search_pop.search .input input[type=text] {background-color: #fff; color: #333; border: 0; border-bottom: 0.4rem solid #000; height: 7rem; text-align: center; padding: 0 5rem 0 0; width: 100%; font-size: 3.5rem; font-family: 's-core-dream-bold';}
+#search_pop.search .input input:focus {outline: none;}
+#search_pop.search .input button {position: absolute; top: 2rem; right: 0; width:4rem;}
+#search_pop.search .input img {border: none; vertical-align: top; height: auto !important; max-width: 100%;}
+#search_pop.search .best {padding: 20px 45px 5px; box-sizing: border-box;}
+#search_pop.search .best h3 {font-size: 24px; color: #333; font-family: 's-core-dream-medium'; text-align: center;}
+#search_pop.search .best ul {overflow: hidden; margin: 20px 0 0;}
+#search_pop.search .best ul li {float: left; width: 50%; margin: 0 0 25px;}
+#search_pop.search .best ul li a {display: block; font-size: 18px; color: #333; font-family: 's-core-dream-regular';}
+
+.prod-price-detail__list .btn_detail {color:red; font-weight: 700;}
+.prod-price-detail__list .btn_detail span:after {border-top:.8rem solid red; font-weight: 700;}
+
+.list__items--spcial-price .flag-red {display: inline-block; margin-right: .5rem; padding: 0 1.2rem; font-size: 1.4rem; color: white; line-height: 3rem; border-radius: .5rem; background: red;}
+.event__wrap {display: -webkit-box;}
+.event_form_title {text-align:center; font-size: 5.5rem; letter-spacing: -0.2rem; margin-top:5rem; margin-bottom:6rem;}
+
+@media screen and (max-width: 991px){
+	.form-radio-text.lg.benefit_card label{padding-top:1.3rem;}
+	.heder__util {height: 8rem; display: grid; padding-left: 2.3rem;}
+	.item-option.option-tarde-msg {font-size:2rem;}
+	.header__logo--link {font-size: 0;}
+	.main__section--cont .bottom-btns-center {margin-top: 3.5rem;}
+	.main__section--cont .bottom-btns-center img {width:45rem;}
+	#header .btn__menu--open {left:1.5rem;}
+	#header .btn__search--mo-blk {right:2.5rem;}
+	.event_form_title {font-size: 3.5rem;}
+}
