@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/web.reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/renew.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/olib.css" />
+    <title>포니또샵</title>
+
+    <script src="../assets/js/lib/jquery.min.js"></script>
+    <script src="../assets/js/lib/swiper.min.js"></script>
+    <script src="../assets/js/ui.js"></script>
+    <script defer src="../assets/js/renew.js"></script>
+  </head>
+  <body>
+    <!-- 
+    ** 이벤트 ** 
+    -->
+    <div id="wrap" class="shop">
+      <!-- S :: header -->
+      <header id="header" class="header-renew">
+        <div class="inner">
+          <h1 class="h-logo">
+            <a href="/">
+              <span class="sr-only">포니또샵</span>
+              <i class="icon icon--bi"></i>
+            </a>
+          </h1>
+
+          <div class="nav-items-wrap">
+            <div class="nav-inner">
+              <div class="nav__items">
+                <a href="javascript:void(0);" class="btn-login">로그인</a>
+                <!-- gnb -->
+                <nav class="gnb">
+                  <ul class="gnb-items">
+                    <li><a href="javascript:void(0);">모바일</a></li>
+                    <li><a href="javascript:void(0);">인터넷+TV</a></li>
+                    <li><a href="javascript:void(0);">워치</a></li>
+                    <li><a href="javascript:void(0);">상담/주문현황</a></li>
+                    <li><a href="javascript:void(0);">고객센터</a></li>
+                    <li><a href="javascript:void(0);">이벤트</a></li>
+                  </ul>
+                </nav>
+                <!-- // gnb -->
+
+                <!-- header util -->
+                <nav class="header__util">
+                  <a href="javascript:void(0);">로그인</a>
+                  <a href="javascript:void(0);">내정보</a>
+                </nav>
+                <!-- // header util -->
+              </div>
+
+              <button type="button" class="btn__menu-close" onclick="javascript: clickMenuControl(event)">
+                <span class="sr-only">메뉴닫기</span>
+                <i class="icon icon--menu-close"></i>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn__menu-open" onclick="javascript: clickMenuControl(event)">
+            <span class="sr-only">메뉴열기</span>
+            <i class="icon icon--menu-open"></i>
+          </button>
+          <div class="dimmed" onclick="javascript: clickMenuControl(event)"></div>
+        </div>
+      </header>
+      <!-- E :: header -->
+
+      <!-- S :: contents -->
+      <main class="container container-renew">
+        <div class="inner">
+          <h2 class="cont-title">이벤트</h2>
+          <ul class="event-items">
+            <li class="item">
+              <a href="javascript:void(0);">
+                <img src="../assets/images/ponitto/temp/event01.png" class="thumb" alt="" />
+              </a>
+            </li>
+            <li class="item">
+              <a href="javascript:void(0);">
+                <img src="../assets/images/ponitto/temp/event02.png" class="thumb" alt="" />
+              </a>
+            </li>
+            <li class="item">
+              <a href="javascript:void(0);">
+                <img src="../assets/images/ponitto/temp/event03.png" class="thumb" alt="" />
+              </a>
+            </li>
+            <li class="item">
+              <a href="javascript:void(0);">
+                <img src="../assets/images/ponitto/temp/event04.png" class="thumb" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <!-- E :: contents -->
+
+      <!-- S :: footer -->
+      <footer id="footer" class="footer-renew">
+        <div class="inner">
+          <!-- footer util -->
+          <div class="info">
+            <p class="f-bi">
+              <span class="sr-only">포니또샵</span>
+              <i class="icon icon--bi"></i>
+            </p>
+            <div class="util">
+              <a href="javascript:void(0);">개인정보취급방침</a>
+              <a href="javascript:void(0);">이용약관</a>
+              <a href="javascript:void(0);">회사소개서</a>
+            </div>
+          </div>
+          <!-- // footer util -->
+          <!-- footer address -->
+          <div class="addr">
+            <p>상호명 : 주식회사 아이원플러스</p>
+            <p>대표자 : 김유겸</p>
+            <p>주소 : 서울 성동구 아차산로7나길 18(대선 APEX CENTER) 505호</p>
+            <p>사업자등록번호 : 378-87-00336</p>
+            <p>고객센터 1522-0646<br />(평일 오전10시 ~ 오후6시 / 점심 : 오후12시 ~ 오후1시)</p>
+            <p class="copyright">COPYRIGHT © 주식회사 아이원플러스. ALL RIGHTS RESERVED.</p>
+          </div>
+          <!-- // footer address -->
+        </div>
+      </footer>
+      <!-- E :: footer -->
+
+      <!-- floating -->
+      <aside class="aside-shop">
+        <a href="http://pf.kakao.com/_MAJts/chat" class="btn btn-kakao" target="_blank">
+          <span class="sr-only">카톡상담</span>
+          <i class="icon icon--kakao"></i>
+        </a>
+        <a href="javascript:void(0);" class="btn btn-top">
+          <span class="sr-only">맨 위로 이동</span>
+          <i class="icon icon--top"></i>
+        </a>
+      </aside>
+      <!-- // floating -->
+    </div>
+  </body>
+</html>
