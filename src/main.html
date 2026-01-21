@@ -77,13 +77,28 @@
           <section class="section__main-visual">
             <div class="swiper-container">
               <ul class="swiper-wrapper">
-                <li clas="swiper-slide">
+                <li class="swiper-slide">
                   <a href="javascript:void(0);">
-                    <img src="../assets/images/ponitto/temp/list_banner_w.png" alt="" class="img-wide" />
-                    <img src="../assets/images/ponitto/temp/list_banner.png" alt="" class="img-sm" />
+                    <!-- pc용 -->
+                    <img src="../assets/images/ponitto/temp/main_visual_w.png" alt="" class="img-wide" />
+                    <!-- mo용 -->
+                    <img src="../assets/images/ponitto/temp/main_visual_m.png" alt="" class="img-sm" />
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="javascript:void(0);">
+                    <!-- pc용 -->
+                    <img src="../assets/images/ponitto/temp/main_visual_w.png" alt="" class="img-wide" />
+                    <!-- mo용 -->
+                    <img src="../assets/images/ponitto/temp/main_visual_m.png" alt="" class="img-sm" />
                   </a>
                 </li>
               </ul>
+            </div>
+            <div class="swiper-vis-controller">
+              <button tyle="button" class="swiper-button-prev"></button>
+              <div class="swiper-pagination"></div>
+              <button tyle="button" class="swiper-button-next"></button>
             </div>
           </section>
 
@@ -326,10 +341,10 @@
                 </li>
               </ul>
             </div>
-            <div class="swiper_controller">
+            <div class="swiper-controller">
               <div class="swiper-pagination"></div>
               <div class="controller">
-                <button class="play"><i class="icon icon--play"></i><span class="sr-only">시작</span></button>
+                <!-- <button class="play"><i class="icon icon--play"></i><span class="sr-only">시작</span></button> -->
                 <button class="stop"><i class="icon icon--pouse"></i><span class="sr-only">정지</span></button>
               </div>
             </div>
@@ -531,6 +546,26 @@
       <!-- // floating -->
     </div>
     <script>
+      // 메인 visual 스와이퍼
+      const mainVis = document.querySelector(".section__main-visual .swiper-container");
+      let swiperMainVisual = new Swiper(mainVis, {
+        slidesPerView: "auto",
+        loop: true,
+        pagination: {
+          el: ".section__main-visual .swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".section__main-visual .swiper-button-next",
+          prevEl: ".section__main-visual  .swiper-button-prev",
+        },
+        speed: 700,
+        autoplay: {
+          disableOnInteraction: false,
+          delay: 4000,
+        },
+      });
+
       // 배너 스와이퍼
       const banner = document.querySelector(".section__banner .swiper-container");
       let swiperBanner = new Swiper(banner, {
@@ -555,12 +590,16 @@
           btn.addEventListener("click", function () {
             if (this.classList.contains("stop")) {
               swiperBanner.autoplay.stop();
-              this.style.display = "none";
-              document.querySelector(".section__banner .controller .play").style.display = "block";
+              // this.style.display = "none";
+              this.classList.remove("stop");
+              this.classList.add("play");
+              // document.querySelector(".section__banner .controller .play").style.display = "block";
             } else {
               swiperBanner.autoplay.start();
-              this.style.display = "none";
-              document.querySelector(".section__banner .controller .stop").style.display = "block";
+              // this.style.display = "none";
+              this.classList.remove("play");
+              this.classList.add("stop");
+              // document.querySelector(".section__banner .controller .stop").style.display = "block";
             }
           });
         });
@@ -570,7 +609,7 @@
       const itemsTop = document.querySelector(".phone-list-wrap.list-top .swiper-items");
       let swiperItemsTop = new Swiper(itemsTop, {
         slidesPerView: "auto",
-        loop: true,
+        loop: false,
         speed: 700,
         navigation: {
           nextEl: ".phone-list-wrap.list-top .swiper-button-next",
@@ -580,7 +619,7 @@
       const itemsBottom = document.querySelector(".phone-list-wrap.list-bottom .swiper-items");
       let swiperItemsBottom = new Swiper(itemsBottom, {
         slidesPerView: "auto",
-        loop: true,
+        loop: false,
         speed: 700,
         navigation: {
           nextEl: ".phone-list-wrap.list-bottom .swiper-button-next",

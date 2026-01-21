@@ -2277,10 +2277,14 @@ corporation contents - 기업전용 shop으로 이동
 #wrap.shop으로 사용
 *************************************************************************/
 :root {
+  --primary: #2c7ff6;
+  --secondary: #002060;
+  --tertiary: #13b8b8;
   --gray82: #828282;
   --gray84: #848484;
   --gray52: #525252;
   --gray54: #545454;
+  --grayf0: #f0f0f0;
   --graybc: #bcbcbc;
   --text-primary: #22262b;
 }
@@ -2336,16 +2340,26 @@ corporation contents - 기업전용 shop으로 이동
     color: #fff;
     border-radius: 10px;
     &.btn-primary {
-      background: #2c7ff6;
+      background: var(--primary);
     }
     &.btn-secondary {
-      background: #002060;
+      background: var(--secondary);
     }
     &.btn-rounded {
       border-radius: 40px;
     }
     &.w-full {
       width: 100%;
+    }
+    &.h-lg {
+      height: 56px;
+      font-size: 18px;
+    }
+    &.min-w {
+      min-width: 320px;
+      @media (width <= 787px) {
+        width: 100%;
+      }
     }
   }
 
@@ -2359,13 +2373,221 @@ corporation contents - 기업전용 shop으로 이동
     border: 1px solid #7d90b5;
   }
 
+  /** form **/
+  .form-label--shop {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    flex: 0 0 125px;
+    color: var(--text-primary);
+    .requiry {
+      color: #fe3a4c;
+    }
+    @media (width <= 787px) {
+      & {
+        margin-bottom: 14px;
+        flex: 1 1 100%;
+      }
+    }
+  }
+  .form-text--shop {
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 0 14px;
+    border: 1px solid #7d90b5;
+    border-radius: 10px;
+    font-size: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+    &::-webkit-input-placeholder {
+      color: #6a7685;
+    }
+    &:disabled {
+      background-color: #f7f7f7;
+      border-color: #f7f7f7;
+    }
+  }
+  .form-textarea--shop {
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #7d90b5;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+    &::-webkit-input-placeholder {
+      color: #6a7685;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    &:disabled {
+      min-height: 44px;
+      background-color: #f7f7f7;
+      border-color: #f7f7f7;
+    }
+    @media (width <= 787px) {
+      height: 64px;
+    }
+  }
+  .form-select--shop {
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 0 36px 0 14px;
+    border: 1px solid #7d90b5;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #fff url(../images/ponitto/icon_arrow_down.svg) no-repeat right 14px center;
+  }
+
+  .form__list--shop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .form-group {
+      display: flex;
+      align-items: center;
+      flex: 1 1 100%;
+      margin: 0;
+      &.basis-50 {
+        flex: 0 1 calc(50% - 10px);
+      }
+      @media (width <= 787px) {
+        & {
+          flex-direction: column;
+          align-items: flex-start;
+          &.basis-50 {
+            flex: 1 1 100%;
+          }
+        }
+      }
+      .form-control {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex: 1 1 auto;
+        &.tel,
+        &.email {
+          .form-text--shop,
+          .form-select--shop {
+            flex: 0 1 170px;
+          }
+        }
+        &.address {
+          flex-direction: column;
+          align-items: flex-start;
+          .zip {
+            .form-text--shop {
+              flex: 0 1 170px;
+            }
+            button {
+              white-space: nowrap;
+            }
+          }
+          .detail-addr {
+            width: 100%;
+            .form-text--shop {
+              flex: 0 1 350px;
+              &:last-child {
+                flex: 1;
+              }
+            }
+          }
+        }
+        .email-addr {
+          display: flex;
+          align-items: center;
+          flex: 0 1 170px;
+          gap: 10px;
+        }
+        .unit {
+          font-size: 16px;
+        }
+        @media (width <= 787px) {
+          & {
+            width: 100%;
+            &.tel,
+            &.email {
+              .form-text--shop,
+              .form-select--shop {
+                flex: 1 1 calc(50% - 10px);
+              }
+            }
+            &.email {
+              flex-wrap: wrap;
+            }
+            .email-addr {
+              flex: 1 0 100%;
+            }
+            &.address {
+              .zip {
+                .form-text--shop {
+                  flex: 1 1 100%;
+                }
+              }
+              .detail-addr {
+                flex-direction: column;
+                width: 100%;
+                .form-text--shop {
+                  flex: 1 1 auto;
+                  &:last-child {
+                    flex: 1 1 auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-checkbox--shop {
+    label {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      font-size: 0;
+      &:before {
+        border: 1px solid #7d90b5;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        border: 1px solid #7d90b5;
+        border-radius: 10px;
+        background: #fff url(../images/ponitto/icon_check.svg) no-repeat center center;
+      }
+    }
+    :checked ~ label {
+      &:before {
+        border-color: var(--secondary);
+      }
+      &:after {
+        border-color: var(--secondary);
+        background-color: var(--secondary);
+        background-image: url(../images/ponitto/icon_check_active.svg);
+      }
+    }
+  }
+
   /** grid **/
   .tb-grid {
     display: grid;
     width: 100%;
     .grid-row {
       display: grid;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid var(--grayf0);
       & > * {
         font-size: 16px;
         color: var(--text-primary);
@@ -2392,7 +2614,7 @@ corporation contents - 기업전용 shop으로 이동
       padding: 4px 6px;
       font-size: 14px;
       color: #a0a0a0;
-      border: 1px solid #f0f0f0;
+      border: 1px solid var(--grayf0);
       &.current {
         font-weight: 500;
         pointer-events: none;
@@ -2786,6 +3008,19 @@ corporation contents - 기업전용 shop으로 이동
     color: var(--text-primary);
     line-height: 1.4;
   }
+  .h3-title {
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #bbcde5;
+    @media (width <= 787px) {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+    }
+  }
 
   .section-title-box {
     display: flex;
@@ -2808,6 +3043,56 @@ corporation contents - 기업전용 shop으로 이동
       color: var(--gray82);
       font-weight: 500;
       background: url(../images/ponitto/icon_arrow_right.svg) no-repeat right center/ 6px;
+    }
+  }
+
+  .swiper-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    margin-top: 12px;
+    .swiper-pagination {
+      display: flex;
+      position: static;
+      gap: 6px;
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .swiper-pagination-bullet-active {
+        width: 22px;
+        background: #0d2768;
+      }
+    }
+    .controller {
+      button {
+        width: 16px;
+        height: 16px;
+      }
+      /* button.play {
+          display: none;
+        }
+        button.stop {
+          display: block;
+        } */
+      .icon--pouse {
+        width: 16px;
+        height: 16px;
+        &:before {
+          background-image: url(../images/ponitto/icon_pouse.svg);
+        }
+      }
+      .icon--play {
+        width: 16px;
+        height: 16px;
+        &:before {
+          background-image: url(../images/ponitto/icon_play.svg);
+        }
+      }
     }
   }
 
@@ -2843,9 +3128,13 @@ corporation contents - 기업전용 shop으로 이동
       width: 50px;
       height: 50px;
       margin-top: -25px;
-      border: 1px solid #f0f0f0;
+      border: 1px solid var(--grayf0);
       border-radius: 100%;
       background: var(--white);
+      &.swiper-button-disabled {
+        /* display: none; */
+        pointer-events: initial;
+      }
       @media (width <= 787px) {
         display: none;
       }
@@ -2873,8 +3162,8 @@ corporation contents - 기업전용 shop으로 이동
   .phone-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid var(--grayf0);
+    border-bottom: 1px solid var(--grayf0);
     gap: 0 10px;
     &.type-box {
       position: relative;
@@ -2899,8 +3188,9 @@ corporation contents - 기업전용 shop으로 이동
   .phone-list-item {
     overflow: hidden;
     margin-bottom: -1px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--grayf0);
     .type-box & {
+      display: flex;
       position: relative;
       overflow: initial;
       margin: 0;
@@ -2918,6 +3208,7 @@ corporation contents - 기업전용 shop으로 이동
       }
     }
     .grid-col {
+      width: 100%;
       display: flex;
       padding: 14px 0;
       color: var(--text-primary);
@@ -2926,7 +3217,7 @@ corporation contents - 기업전용 shop으로 이동
         padding: 0 20px 20px;
         flex-direction: column;
         align-items: center;
-        border: 1px solid #f0f0f0;
+        border: 1px solid var(--grayf0);
         border-radius: 20px;
         box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.04);
       }
@@ -3113,7 +3404,7 @@ corporation contents - 기업전용 shop으로 이동
     a {
       display: block;
       font-size: 20px;
-      color: #828282;
+      color: var(--gray82);
       font-weight: 700;
       line-height: 1.4;
       &.is-selected {
@@ -3158,73 +3449,337 @@ corporation contents - 기업전용 shop으로 이동
         }
       }
     }
-    .swiper_controller {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      position: relative;
-      margin-top: 12px;
-      .swiper-pagination {
-        display: flex;
-        position: static;
-        gap: 6px;
-        .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          border-radius: 5px;
-          background: rgba(0, 0, 0, 0.5);
-        }
-        .swiper-pagination-bullet-active {
-          width: 22px;
-          background: #0d2768;
-        }
-      }
-      .controller {
-        button {
-          width: 16px;
-          height: 16px;
-        }
-        button.play {
-          display: none;
-        }
-        button.stop {
-          display: block;
-        }
-        .icon--pouse {
-          width: 16px;
-          height: 16px;
-          &:before {
-            background-image: url(../images/ponitto/icon_pouse.svg);
-          }
-        }
-        .icon--play {
-          width: 16px;
-          height: 16px;
-          &:before {
-            background-image: url(../images/ponitto/icon_play.svg);
-          }
-        }
-      }
-    }
   }
 
   .section__phone-items {
     .btn-area {
       text-align: center;
-      .btn-more {
+    }
+  }
+
+  .btn-toggle {
+    width: 100%;
+    padding: 16px 20px;
+    text-align: center;
+    border: 1px solid var(--grayf0);
+    border-radius: 20px;
+    .btn-more-down:after {
+      transition: all 0.4s ease;
+    }
+    &.open {
+      .btn-more-down:after {
+        transform: rotate(-180deg);
+      }
+    }
+    @media (width <= 787px) {
+      & {
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+  .btn-more-down {
+    position: relative;
+    padding-right: 26px;
+    font-size: 16px;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: calc(50% - 7px);
+      width: 14px;
+      height: 10px;
+      background: url(../images/ponitto/icon_arrow_down_46.svg) no-repeat center center;
+    }
+  }
+
+  /* 변경신청서 */
+  .order-reg__info {
+    display: flex;
+    gap: 20px;
+    @media (width <= 787px) {
+      flex-direction: column;
+    }
+    .prod-info {
+      flex: 1;
+      padding: 20px 30px;
+      border: 1px solid var(--grayf0);
+      border-radius: 20px;
+      @media (width <= 787px) {
+        width: 100%;
+      }
+      .thumb {
+        display: block;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+      }
+      .name {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+        img {
+          width: 100%;
+        }
+      }
+      .details {
+        display: grid;
+        gap: 14px;
+        margin-top: 22px;
+        padding-top: 22px;
+        border-top: 1px solid var(--grayf0);
+        .options {
+          display: flex;
+          color: var(--text-primary);
+          line-height: 1.4;
+          dt {
+            width: 95px;
+            flex: none;
+            font-size: 16px;
+            font-weight: 700;
+          }
+          dd {
+            display: flex;
+            align-items: center;
+            flex: 1 1 auto;
+            font-size: 16px;
+          }
+          .color-chip {
+            display: inline-flex;
+            width: 26px;
+            height: 26px;
+            border-radius: 100%;
+            border: 1px solid transparent;
+          }
+          .primary {
+            color: var(--primary);
+          }
+          &.color {
+            dd {
+              gap: 10px;
+            }
+            .unit {
+              color: #6a7685;
+            }
+          }
+          &.agent {
+            dd {
+              gap: 3px;
+            }
+          }
+        }
+      }
+    }
+    .price-info {
+      display: grid;
+      gap: 14px;
+      flex: 1;
+      @media (width <= 787px) {
+        width: 100%;
+      }
+      .box {
         position: relative;
-        padding-right: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+        padding: 20px;
         font-size: 16px;
-        &:after {
+        line-height: 1.4;
+        color: var(--text-primary);
+        border: 1px solid var(--grayf0);
+        border-radius: 20px;
+        background: var(--white);
+        &.order-date {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-color: var(--secondary);
+          font-weight: 700;
+          font-size: 20px;
+        }
+        &.total {
+          justify-content: center;
+          gap: 50px;
+          background: var(--grayf0);
+          dt {
+            font-weight: 700;
+          }
+          dd {
+            em {
+              font-size: 20px;
+            }
+          }
+        }
+        &.benefit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--white);
+          border-color: var(--secondary);
+          background: var(--secondary);
+          font-weight: 700;
+          strong {
+            display: inline-block;
+            line-height: 1.1;
+            font-size: 26px;
+            font-weight: 600;
+          }
+          em {
+            display: inline-block;
+            line-height: 1.4;
+            font-size: 20px;
+          }
+        }
+        &.calc:before {
           content: "";
           position: absolute;
-          right: 0;
-          top: calc(50% - 4px);
-          width: 14px;
-          height: 7px;
-          background: url(../images/ponitto/icon_arrow_down_46.svg) no-repeat center center;
+          left: calc(50% - 18px);
+          top: -26px;
+          width: 36px;
+          height: 36px;
+          border-radius: 100%;
+          background: var(--secondary) no-repeat center center;
         }
+        &.calc.calc--plus:before {
+          background-image: url(../images/ponitto/icon_plus.svg);
+        }
+        &.calc.calc--total:before {
+          background-image: url(../images/ponitto/icon_equal.svg);
+        }
+        dt {
+          strong {
+            font-weight: 700;
+          }
+        }
+        dd {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .order-reg__detail {
+    margin-top: 20px;
+    .toggle-box {
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      visibility: hidden;
+      overflow: hidden;
+      height: 0;
+      border-radius: 20px;
+      .dl-box {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        & + .dl-box {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid var(--grayf0);
+        }
+        & > div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 16px;
+          line-height: 1.4;
+          color: var(--text-primary);
+          &.total {
+            font-weight: 700;
+          }
+        }
+      }
+      &.open {
+        visibility: visible;
+        overflow: initial;
+        height: auto;
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid var(--grayf0);
+      }
+    }
+  }
+  .section__agree {
+    .agree-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      & + .agree-box {
+        margin-top: 14px;
+      }
+      .toggle-box {
+        display: none;
+        width: 100%;
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #6a7685;
+        background: #fafafa;
+        &.open {
+          display: block;
+        }
+      }
+      .title {
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .btn-toggle {
+        outline: none;
+        display: inline-flex;
+        gap: 20px;
+        width: auto;
+        max-width: calc(100% - 70px);
+        margin-right: auto;
+        padding: 0;
+        border: 0;
+        text-align: left;
+        align-self: flex-start;
+        .btn-more-down {
+          flex: none;
+        }
+        @media (width <= 787px) {
+          gap: 0;
+          & {
+            .btn-more-down {
+              overflow: hidden;
+              width: 0;
+              height: 0;
+              padding: 0;
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section__reqbox {
+    padding: 30px;
+    border: 1px solid var(--grayf0);
+    background: #f7f7f7;
+    border-radius: 20px;
+    text-align: center;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      &:before {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 33px;
+        background: url(../images/ponitto/icon_req.png) no-repeat center center;
       }
     }
   }
@@ -3351,13 +3906,13 @@ corporation contents - 기업전용 shop으로 이동
             }
           }
           &:nth-child(2) {
-            background-color: #002060;
+            background-color: var(--secondary);
             &:before {
               background-image: url(../images/ponitto/icon_step2.png);
             }
           }
           &:nth-child(3) {
-            background-color: #13b8b8;
+            background-color: var(--tertiary);
             &:before {
               background-image: url(../images/ponitto/icon_step3.png);
             }
@@ -3436,7 +3991,7 @@ corporation contents - 기업전용 shop으로 이동
             font-weight: 700;
             line-height: 1.4;
             color: var(--primary);
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--grayf0);
           }
           .card-body {
             display: flex;
@@ -3511,7 +4066,7 @@ corporation contents - 기업전용 shop으로 이동
     max-width: 400px;
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid var(--grayf0);
     border-radius: 20px;
     .box-title {
       display: block;
@@ -3536,7 +4091,7 @@ corporation contents - 기업전용 shop으로 이동
   .order-details-box {
     width: 100%;
     padding: 20px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid var(--grayf0);
     border-radius: 20px;
     .grid-row {
       grid-template-columns: minmax(50px, 12%) minmax(100px, 25%) 1fr;
@@ -3544,6 +4099,87 @@ corporation contents - 기업전용 shop으로 이동
         .no,
         .date {
           color: #6a7685;
+        }
+      }
+    }
+  }
+
+  /* 인터넷 */
+  .section__internet--benefit {
+    .title {
+      display: block;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+  }
+  .swiper-benefit {
+    .top {
+      margin-bottom: 20px;
+      text-align: center;
+      @media (width <= 787px) {
+        margin-bottom: 14px;
+      }
+      .badge {
+        display: inline-flex;
+        gap: 4px;
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        border-radius: 30px;
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 600;
+        strong {
+          font-weight: 800;
+        }
+        &.primary {
+          background: var(--primary);
+        }
+        &.secondary {
+          background: var(--secondary);
+        }
+        &.tertiary {
+          background: var(--tertiary);
+        }
+      }
+      .benefit-title {
+        display: block;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 700;
+        .primary {
+          color: var(--primary);
+        }
+        .secondary {
+          color: var(--secondary);
+        }
+        .tertiary {
+          color: var(--tertiary);
+        }
+      }
+    }
+    .benefit-box {
+      display: flex;
+      gap: 10px;
+      .card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+        border: 1px solid;
+        &.primary {
+          border-color: var(--primary);
+        }
+        &.secondary {
+          border-color: var(--secondary);
+        }
+        &.tertiary {
+          border-color: var(--tertiary);
         }
       }
     }
@@ -3566,15 +4202,15 @@ corporation contents - 기업전용 shop으로 이동
       display: inline-flex;
       padding: 6px 16px;
       border-radius: 40px;
-      border: 1px solid #f0f0f0;
+      border: 1px solid var(--grayf0);
       font-size: 14px;
       font-weight: 500;
       line-height: 1.4;
       color: #6a7685;
       &.selected {
-        border-color: #545454;
+        border-color: var(--gray54);
         color: var(--black);
-        background: #f4f4f4;
+        background: var(--gray5);
       }
     }
     .search-area {
@@ -3584,7 +4220,7 @@ corporation contents - 기업전용 shop으로 이동
       .btn-search {
         height: 42px;
         width: 42px;
-        background: #002060;
+        background: var(--secondary);
         flex: none;
         border-radius: 100%;
         .icon-search {
@@ -3602,7 +4238,7 @@ corporation contents - 기업전용 shop으로 이동
       display: flex;
       padding: 14px 0;
       border-top: 1px solid #c3d3e8;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid var(--grayf0);
       font-size: 16px;
       font-weight: 600;
       line-height: 1.4;
@@ -3628,7 +4264,7 @@ corporation contents - 기업전용 shop으로 이동
       > li.question {
         display: flex;
         margin: 0;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid var(--grayf0);
         .cate {
           width: 90px;
           padding: 14px 0;
@@ -3665,7 +4301,7 @@ corporation contents - 기업전용 shop으로 이동
         padding: 30px 0;
         font-size: 16px;
         border: 0;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid var(--grayf0);
         background: #fff;
         color: #6a7685;
         line-height: 1.4;
@@ -3685,15 +4321,15 @@ corporation contents - 기업전용 shop으로 이동
       display: inline-flex;
       padding: 6px 16px;
       border-radius: 40px;
-      border: 1px solid #f0f0f0;
+      border: 1px solid var(--grayf0);
       font-size: 14px;
       font-weight: 500;
       line-height: 1.4;
       color: #6a7685;
       &.selected {
-        border-color: #545454;
+        border-color: var(--gray54);
         color: var(--black);
-        background: #f4f4f4;
+        background: var(--gray5);
       }
     }
   }
@@ -3704,7 +4340,7 @@ corporation contents - 기업전용 shop으로 이동
     .btn-search {
       height: 42px;
       width: 42px;
-      background: #002060;
+      background: var(--secondary);
       flex: none;
       border-radius: 100%;
       .icon-search {
@@ -3748,7 +4384,7 @@ corporation contents - 기업전용 shop으로 이동
     margin: 0 auto;
     padding: 50px 30px 30px;
     text-align: center;
-    border: 1px solid #f0f0f0;
+    border: 1px solid var(--grayf0);
     border-radius: 20px;
     .text {
       display: flex;
@@ -3788,5 +4424,115 @@ corporation contents - 기업전용 shop으로 이동
   /* main */
   .phone-list-wrap + .phone-list-wrap {
     margin-top: 20px;
+  }
+
+  .section__main-visual {
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    @media (width <= 787px) {
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+    .swiper-container {
+      border-radius: 20px;
+    }
+    .swiper-slide {
+      width: 100%;
+      a {
+        display: block;
+        width: 100%;
+        @media (width <= 787px) {
+          aspect-ratio: 36 / 13;
+        }
+        @media (width <= 481px) {
+          aspect-ratio: 36 / 23;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      &.img-wide {
+        display: block;
+      }
+      &.img-sm {
+        display: none;
+      }
+      @media (width <= 991px) {
+        & {
+          max-width: 100%;
+          width: auto;
+          height: 230px;
+          object-fit: cover;
+        }
+      }
+      @media (width <= 787px) {
+        & {
+          height: 100%;
+        }
+      }
+      @media (width <= 481px) {
+        & {
+          width: 100%;
+          height: auto;
+          &.img-wide {
+            display: none;
+          }
+          &.img-sm {
+            display: block;
+          }
+        }
+      }
+    }
+    .swiper-vis-controller {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      position: absolute;
+      bottom: 55px;
+      left: calc(50% - (580px / 2));
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: static;
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        &:after {
+          font-size: 0;
+          width: 16px;
+          height: 16px;
+          background: no-repeat center center / 6px;
+        }
+      }
+      @media (width <= 787px) {
+        & {
+          left: 4%;
+          bottom: 20%;
+        }
+      }
+      @media (width <= 481px) {
+        & {
+          left: 10%;
+          bottom: 15%;
+        }
+      }
+      .swiper-button-prev:after {
+        background-image: url(../images/ponitto/icon_swiper_prev_fff.svg);
+      }
+      .swiper-button-next:after {
+        background-image: url(../images/ponitto/icon_swiper_next_fff.svg);
+      }
+      .swiper-pagination {
+        display: flex;
+        position: static;
+        gap: 2px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--white);
+      }
+    }
   }
 }

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/web.reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/renew.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/olib.css" />
+    <title>포니또샵</title>
+
+    <script src="../assets/js/lib/jquery.min.js"></script>
+    <script src="../assets/js/lib/swiper.min.js"></script>
+    <script src="../assets/js/ui.js"></script>
+    <script defer src="../assets/js/renew.js"></script>
+  </head>
+  <body>
+    <!-- 
+    ** 변경신청서 ** 
+    -->
+    <div id="wrap" class="shop">
+      <!-- S :: header -->
+      <header id="header" class="header-renew">
+        <div class="inner">
+          <h1 class="h-logo">
+            <a href="/">
+              <span class="sr-only">포니또샵</span>
+              <i class="icon icon--bi"></i>
+            </a>
+          </h1>
+
+          <div class="nav-items-wrap">
+            <div class="nav-inner">
+              <div class="nav__items">
+                <a href="javascript:void(0);" class="btn-login">로그인</a>
+                <!-- gnb -->
+                <nav class="gnb">
+                  <ul class="gnb-items">
+                    <li><a href="javascript:void(0);">모바일</a></li>
+                    <li><a href="javascript:void(0);">인터넷+TV</a></li>
+                    <li><a href="javascript:void(0);">워치</a></li>
+                    <li><a href="javascript:void(0);">상담/주문현황</a></li>
+                    <li><a href="javascript:void(0);">고객센터</a></li>
+                    <li><a href="javascript:void(0);">이벤트</a></li>
+                  </ul>
+                </nav>
+                <!-- // gnb -->
+
+                <!-- header util -->
+                <nav class="header__util">
+                  <a href="javascript:void(0);">로그인</a>
+                  <a href="javascript:void(0);">내정보</a>
+                </nav>
+                <!-- // header util -->
+              </div>
+
+              <button type="button" class="btn__menu-close" onclick="javascript: clickMenuControl(event);">
+                <span class="sr-only">메뉴닫기</span>
+                <i class="icon icon--menu-close"></i>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn__menu-open" onclick="javascript: clickMenuControl(event);">
+            <span class="sr-only">메뉴열기</span>
+            <i class="icon icon--menu-open"></i>
+          </button>
+          <div class="dimmed" onclick="javascript: clickMenuControl(event);"></div>
+        </div>
+      </header>
+      <!-- E :: header -->
+
+      <!-- S :: contents -->
+      <main class="container container-renew">
+        <div class="inner">
+          <h2 class="cont-title">상품 가입 신청</h2>
+
+          <!-- 상품가입정보 -->
+          <section class="order-reg__info">
+            <!-- 상품정보 -->
+            <div class="prod-info">
+              <span class="thumb">
+                <img src="../assets/images/ponitto/temp/img_phone2.png" />
+              </span>
+              <strong class="name">플립7 256G</strong>
+              <dl class="details">
+                <div class="options color">
+                  <dt>색상 및 용량</dt>
+                  <dd>
+                    <i class="color-chip" style="background: #f76a6b; border-color: #f76a6b"></i>
+                    <span class="info">코랄레드</span>
+                    <span class="unit">|</span>
+                    <span class="info">256G</span>
+                  </dd>
+                </div>
+                <div class="options agent">
+                  <dt>통신사·유심</dt>
+                  <dd>
+                    <span class="before">U+</span>
+                    <span class="unit">→</span>
+                    <span class="after"><em class="primary">SKT</em> (기기변경, 신규유심)</span>
+                  </dd>
+                </div>
+                <div class="options">
+                  <dt>요금제</dt>
+                  <dd>베이직 (월 49,000원)</dd>
+                </div>
+                <div class="options">
+                  <dt>구매방법</dt>
+                  <dd>24개월</dd>
+                </div>
+                <div class="options">
+                  <dt>제휴카드</dt>
+                  <dd>선택 안함</dd>
+                </div>
+              </dl>
+            </div>
+            <!-- // 상품정보 -->
+            <!-- 금액정보 -->
+            <div class="price-info">
+              <div class="box benefit">
+                <p>지금 신청 시, 최대 <strong>424,000</strong> <em>원 할인!</em></p>
+              </div>
+              <dl class="box total">
+                <dt>예상 월 납부총액 (VAT포함)</dt>
+                <dd><em class="price">87,970</em>원</dd>
+              </dl>
+              <dl class="box">
+                <dt><strong>월 할부금</strong> (24개월)</dt>
+                <dd><em class="price">51,226</em>원</dd>
+              </dl>
+              <dl class="box calc calc--plus">
+                <dt><strong>요금제</strong> (베이직)</dt>
+                <dd><em class="price">36,750</em>원</dd>
+              </dl>
+              <dl class="box calc calc--total">
+                <dt><strong>월 납부액</strong> (부가세 포함)</dt>
+                <dd><em class="price">87,970</em>원</dd>
+              </dl>
+            </div>
+            <!-- // 금액정보 -->
+          </section>
+          <!-- // 상품가입정보 -->
+
+          <section class="order-reg__detail">
+            <button type="button" class="btn-toggle btn-cont-open" data-text="신청내역 확인하기, 신청내역 닫기"><span class="btn-more-down">신청내역 확인하기</span></button>
+
+            <div class="toggle-box">
+              <dl class="dl-box">
+                <div class="total">
+                  <dt>월 납부 단말요금(VAT 포함)</dt>
+                  <dd>73,909원</dd>
+                </div>
+                <div>
+                  <dt>단말기 출고가</dt>
+                  <dd>2,379,300원</dd>
+                </div>
+                <div>
+                  <dt>포니또 자체할인</dt>
+                  <dd>-710,000원</dd>
+                </div>
+                <div>
+                  <dt>할부원금</dt>
+                  <dd>1,773,821원</dd>
+                </div>
+                <div>
+                  <dt>할부 수수료</dt>
+                  <dd>104,521원</dd>
+                </div>
+                <div>
+                  <dt>실구매가(VAT 포함)</dt>
+                  <dd>1,669,300원</dd>
+                </div>
+              </dl>
+              <dl class="dl-box">
+                <div class="total">
+                  <dt>월 납부 통신요금(VAT 포함)</dt>
+                  <dd>155,650원</dd>
+                </div>
+                <div>
+                  <dt>기본요금</dt>
+                  <dd>109,000원</dd>
+                </div>
+                <div>
+                  <dt>약정 할인금액</dt>
+                  <dd>-27,250원</dd>
+                </div>
+              </dl>
+              <dl class="dl-box">
+                <div class="total">
+                  <dt>추가 납부금액(VAT 포함)</dt>
+                  <dd>7,700원</dd>
+                </div>
+                <div>
+                  <dt>유심</dt>
+                  <dd>7,700원</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <!-- 신청서작성 -->
+          <section class="section__divider section__order-form">
+            <h3 class="h3-title">신청자 정보 입력</h3>
+
+            <div class="order-form__wrap">
+              <div class="form__list--shop">
+                <!-- form -->
+                <div class="form-group basis-50">
+                  <label for="o_name" class="form-label--shop">
+                    <span class="requiry">*<span class="sr-only">필수입력</span></span> 명의자 성함
+                  </label>
+                  <div class="form-control">
+                    <input type="text" class="form-text--shop" id="o_name" name="o_name" placeholder="이름을 입력해주세요." value="" />
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group basis-50">
+                  <label for="o_birth" class="form-label--shop"> 생년월일 </label>
+                  <div class="form-control">
+                    <input type="text" class="form-text--shop" id="o_birth" name="o_birth" placeholder="생년월일을 입력하세요.(예- 19991212)" value="" />
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group">
+                  <label for="o_hp1" class="form-label--shop">
+                    <span class="requiry">*<span class="sr-only">필수입력</span></span> 휴대폰번호
+                  </label>
+                  <div class="form-control tel">
+                    <input type="text" class="form-text--shop" id="o_hp1" name="o_hp1" maxlength="3" placeholder="010" value="010" />
+                    <input type="text" class="form-text--shop" id="o_hp2" name="o_hp2" maxlength="4" value="" />
+                    <input type="text" class="form-text--shop" id="o_hp3" name="o_hp3" maxlength="4" value="" />
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group">
+                  <label for="o_email1" class="form-label--shop">이메일</label>
+                  <div class="form-control email">
+                    <div class="email-addr">
+                      <input type="text" class="form-text--shop" id="o_email1" name="o_email1" value="" />
+                      <span class="unit">@</span>
+                    </div>
+                    <input type="text" class="form-text--shop" id="o_email2" name="o_email2" placeholder="직접입력" readonly="" value="" />
+                    <select name="email_select" class="form-select--shop">
+                      <option value="">이메일 선택</option>
+                      <option value="naver.com">naver.com</option>
+                      <option value="gmail.com">gmail.com</option>
+                      <option value="direct">직접입력</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group">
+                  <label for="o_zip" class="form-label--shop">배송지</label>
+                  <div class="form-control address">
+                    <div class="form-control zip">
+                      <input type="text" class="form-text--shop" id="o_zip" name="o_zip" value="" />
+                      <button type="button" class="btn-shop btn-secondary">우편번호</button>
+                    </div>
+                    <div class="form-control detail-addr">
+                      <input type="text" class="form-text--shop" id="o_addr_1" name="o_addr_1" value="" />
+                      <input type="text" class="form-text--shop" id="o_addr_2" name="o_addr_2" placeholder="상세주소" value="" />
+                    </div>
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group">
+                  <label for="o_remark" class="form-label--shop">요청사항</label>
+                  <div class="form-control">
+                    <textarea class="form-textarea--shop" id="o_remark" name="o_remark" placeholder="ex) 재직중인 회사명을 기재해주셔야 상담이 가능합니다."></textarea>
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group basis-50">
+                  <label for="o_cc_name" class="form-label--shop">추천인 성함</label>
+                  <div class="form-control">
+                    <input type="text" class="form-text--shop" id="o_cc_name" name="o_cc_name" placeholder="" value="" />
+                  </div>
+                </div>
+                <!-- // form -->
+                <!-- form -->
+                <div class="form-group basis-50">
+                  <label for="o_cc_hp" class="form-label--shop">추천인 휴대폰</label>
+                  <div class="form-control">
+                    <input type="text" class="form-text--shop" id="o_cc_hp" name="o_cc_hp" placeholder="추천인 휴대폰 번호 뒷자리를 입력하세요" value="" />
+                  </div>
+                </div>
+                <!-- // form -->
+              </div>
+            </div>
+          </section>
+          <!-- // 신청서작성 -->
+
+          <!-- 약관 -->
+          <section class="section__divider section__agree">
+            <h3 class="h3-title">약관 및 동의</h3>
+
+            <div class="agree-box">
+              <button type="button" class="btn-toggle btn-cont-open" data-text="더보기, 닫기">
+                <strong class="title">1. 개통 후 185일간은 반드시 회선을 유지 해주셔야 합니다.</strong>
+                <span class="btn-more-down">더보기</span>
+              </button>
+              <span class="form-checkbox--shop">
+                <input type="checkbox" class="terms-agree-cb" id="agree_1" name="agree_1" value="1" />
+                <label for="agree_1" class="sr-only">동의</label>
+              </span>
+
+              <div class="toggle-box">개통 후 회선 유지 185일(기간 내 회선 해지, 타통신사 재이동, 일시정지 시 약정 위약금 100% 부과 및 단말기 할부금이 청구되오니 유의하시기 바랍니다)</div>
+            </div>
+            <div class="agree-box">
+              <button type="button" class="btn-toggle btn-cont-open" data-text="더보기, 닫기">
+                <strong class="title">2. 위약금은 신청 전 미리 확인 해주세요.</strong>
+                <span class="btn-more-down">더보기</span>
+              </button>
+              <span class="form-checkbox--shop">
+                <input type="checkbox" class="terms-agree-cb" id="agree_1" name="agree_1" value="1" />
+                <label for="agree_1" class="sr-only">동의</label>
+              </span>
+
+              <div class="toggle-box">통신사 이동, 기기변경, 요금 변경이나 해지 등으로 인한 위약금이 발생될 수 있습니다.</div>
+            </div>
+
+            <div class="agree-box">
+              <button type="button" class="btn-toggle btn-cont-open" data-text="더보기, 닫기">
+                <strong class="title">3. 휴대폰 개통을 위한 개인정보 수집 및 개인정보 제3자 제공 동의 여부</strong>
+                <span class="btn-more-down">더보기</span>
+              </button>
+              <span class="form-checkbox--shop">
+                <input type="checkbox" class="terms-agree-cb" id="agree_1" name="agree_1" value="1" />
+                <label for="agree_1" class="sr-only">동의</label>
+              </span>
+
+              <div class="toggle-box">
+                본인은 본 사이트에서 구매 및 이용하기 위해서, 회사가 본인의 개인정보를 수집, 이용하고 서비스의 제공을 위해 개인정보의 취급을 위탁하는 것에 동의합니다.
+                <br />
+                - 수집항목 : 이름, 생년월일, 휴대폰 번호, 이메일, 배송지 주소 , IP주소
+                <br />
+                - 이용목적 : 통신 서비스 가입 및 휴대폰 전산개통 및 고객 상담 및 MMS 광고 발송
+                <br />
+                - 개인정보의 보유기간 및 이용기간 : 개인정보 획득일로부터 3년간 보유 및 이용
+                <br />
+                -개인정보 제3자 제공 / 마케팅 수신 동의 주체
+                <br />
+                1) 개인정보 제공받는자 : (주)아이엠네트웍스와 마케팅 위탁 계약 및 업무 협약을 체결한자
+                <br />
+                2) 개인정보 수집 및 이용목적 : 전화 문자 이메일 등 통신 매개체를 이용한 상품 안내와 이벤트 안내
+                <br />
+                3) 개인정보 수집 항목 : 성명, 생년월일, 휴대폰번호, 이메일, 주소, IP주소
+                <br /><br />
+                위 개인 정보 수집, 이용 및 취급위탁에 동의하지 않으실 경우, 이벤트에 참여하실 수 없습니다.
+                <br />
+                회사가 제공하는 서비스와 관련된 개인정보의 취급과 관련된 사항은, 회사가 운영하는 개인정보취급방침에 따릅니다. 본인은 위 내용을 숙지하였으며 이에 동의합니다.
+              </div>
+            </div>
+          </section>
+          <!-- // 약관 -->
+
+          <div class="section__divider text_center">
+            <button type="button" class="btn-shop btn-primary h-lg min-w">신청하기</button>
+          </div>
+        </div>
+      </main>
+      <!-- E :: contents -->
+
+      <!-- S :: footer -->
+      <footer id="footer" class="footer-renew">
+        <div class="inner">
+          <!-- footer util -->
+          <div class="info">
+            <p class="f-bi">
+              <span class="sr-only">포니또샵</span>
+              <i class="icon icon--bi"></i>
+            </p>
+            <div class="util">
+              <a href="javascript:void(0);">개인정보취급방침</a>
+              <a href="javascript:void(0);">이용약관</a>
+              <a href="javascript:void(0);">회사소개서</a>
+            </div>
+          </div>
+          <!-- // footer util -->
+          <!-- footer address -->
+          <div class="addr">
+            <p>상호명 : 주식회사 아이원플러스</p>
+            <p>대표자 : 김유겸</p>
+            <p>주소 : 서울 성동구 아차산로7나길 18(대선 APEX CENTER) 505호</p>
+            <p>사업자등록번호 : 378-87-00336</p>
+            <p>고객센터 1522-0646<br />(평일 오전10시 ~ 오후6시 / 점심 : 오후12시 ~ 오후1시)</p>
+            <p class="copyright">COPYRIGHT © 주식회사 아이원플러스. ALL RIGHTS RESERVED.</p>
+          </div>
+          <!-- // footer address -->
+        </div>
+      </footer>
+      <!-- E :: footer -->
+
+      <!-- floating -->
+      <aside class="aside-shop">
+        <a href="http://pf.kakao.com/_MAJts/chat" class="btn btn-kakao" target="_blank">
+          <span class="sr-only">카톡상담</span>
+          <i class="icon icon--kakao"></i>
+        </a>
+        <a href="javascript:void(0);" class="btn btn-top">
+          <span class="sr-only">맨 위로 이동</span>
+          <i class="icon icon--top"></i>
+        </a>
+      </aside>
+      <!-- // floating -->
+    </div>
+    <script></script>
+  </body>
+</html>

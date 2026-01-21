@@ -99,8 +99,8 @@
                           <span class="cont"><strong>1,639,300</strong>원</span>
                         </em>
                         <div class="tag">
-                          <span>최대할인</span> 
-                          <span>빠른출고</span> 
+                          <span>최대할인</span>
+                          <span>빠른출고</span>
                         </div>
                         <small class="del-price">
                           <span class="tit">출고가</span>
@@ -122,8 +122,8 @@
                           <span class="cont"><strong>1,639,300</strong>원</span>
                         </em>
                         <div class="tag">
-                          <span>최대할인</span> 
-                          <span>빠른출고</span> 
+                          <span>최대할인</span>
+                          <span>빠른출고</span>
                         </div>
                         <small class="del-price">
                           <span class="tit">출고가</span>
@@ -145,8 +145,8 @@
                           <span class="cont"><strong>1,639,300</strong>원</span>
                         </em>
                         <div class="tag">
-                          <span>최대할인</span> 
-                          <span>빠른출고</span> 
+                          <span>최대할인</span>
+                          <span>빠른출고</span>
                         </div>
                         <small class="del-price">
                           <span class="tit">출고가</span>
@@ -168,8 +168,8 @@
                           <span class="cont"><strong>1,639,300</strong>원</span>
                         </em>
                         <div class="tag">
-                          <span>최대할인</span> 
-                          <span>빠른출고</span> 
+                          <span>최대할인</span>
+                          <span>빠른출고</span>
                         </div>
                         <small class="del-price">
                           <span class="tit">출고가</span>
@@ -212,10 +212,10 @@
                 </li>
               </ul>
             </div>
-            <div class="swiper_controller">
+            <div class="swiper-controller">
               <div class="swiper-pagination"></div>
               <div class="controller">
-                <button class="play"><i class="icon icon--play"></i><span class="sr-only">시작</span></button>
+                <!-- <button class="play"><i class="icon icon--play"></i><span class="sr-only">시작</span></button> -->
                 <button class="stop"><i class="icon icon--pouse"></i><span class="sr-only">정지</span></button>
               </div>
             </div>
@@ -354,7 +354,7 @@
               </ul>
 
               <div class="btn-area">
-                <button type="button" class="btn-more">더 많은 상품 보기</button>
+                <button type="button" class="btn-more-down">더 많은 상품 보기</button>
               </div>
             </div>
             <!-- // 리스트 -->
@@ -431,12 +431,16 @@
           btn.addEventListener("click", function () {
             if (this.classList.contains("stop")) {
               swiperBanner.autoplay.stop();
-              this.style.display = "none";
-              document.querySelector(".section__banner .controller .play").style.display = "block";
+              // this.style.display = "none";
+              this.classList.remove("stop");
+              this.classList.add("play");
+              // document.querySelector(".section__banner .controller .play").style.display = "block";
             } else {
               swiperBanner.autoplay.start();
-              this.style.display = "none";
-              document.querySelector(".section__banner .controller .stop").style.display = "block";
+              // this.style.display = "none";
+              this.classList.remove("play");
+              this.classList.add("stop");
+              // document.querySelector(".section__banner .controller .stop").style.display = "block";
             }
           });
         });
@@ -460,7 +464,7 @@
       const items = document.querySelector(".swiper-items");
       let swiperItems = new Swiper(items, {
         slidesPerView: "auto",
-        loop: true,
+        loop: false,
         // spaceBetween: 20,
         speed: 700,
         // autoplay: {
