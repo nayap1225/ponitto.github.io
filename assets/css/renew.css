@@ -2358,6 +2358,7 @@ corporation contents - 기업전용 shop으로 이동
     &.min-w {
       min-width: 320px;
       @media (width <= 787px) {
+        min-width: 100%;
         width: 100%;
       }
     }
@@ -4105,17 +4106,17 @@ corporation contents - 기업전용 shop으로 이동
   }
 
   /* 인터넷 */
-  .section__internet--benefit {
-    .title {
-      display: block;
-      margin-bottom: 30px;
-      text-align: center;
-      font-size: 20px;
-      line-height: 1.4;
-      font-weight: 700;
-    }
-  }
   .swiper-benefit {
+    margin: 0 -10px;
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 0 10px;
+      @media (width <=787px) {
+       display: block; 
+      }
+    }
     .top {
       margin-bottom: 20px;
       text-align: center;
@@ -4161,8 +4162,14 @@ corporation contents - 기업전용 shop으로 이동
       }
     }
     .benefit-box {
+      flex: 1 1 auto;
       display: flex;
       gap: 10px;
+      @media (width <=787px) {
+        & {
+          flex-direction: column; 
+        }
+      }
       .card {
         flex: 1;
         display: flex;
@@ -4172,18 +4179,386 @@ corporation contents - 기업전용 shop으로 이동
         padding: 30px 20px;
         border-radius: 20px;
         border: 1px solid;
+        @media (width <=787px) {
+          & {
+            gap: 14px;
+            flex-direction: row;
+            justify-content: flex-start;
+          }
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: none;
+          width: 70px;
+          height: 70px;
+          margin: 0 auto 20px;
+          border-radius: 100%;
+          &:before {
+            width: 40px;
+            height: 40px;
+          }
+          @media (width <=787px) {
+            & {
+              margin: 0 auto;
+            }
+          }
+        }
         &.primary {
           border-color: var(--primary);
+          .icon {
+            background-color: var(--primary);
+            &.icon-benefit01-01:before {
+              background-image: url(../images/ponitto/icon_internet_benefit01_01.svg);
+            }
+            &.icon-benefit01-02:before {
+              background-image: url(../images/ponitto/icon_internet_benefit01_02.svg);
+            }
+            &.icon-benefit01-03:before {
+              background-image: url(../images/ponitto/icon_internet_benefit01_03.svg);
+            }
+            &.icon-benefit01-04:before {
+              background-image: url(../images/ponitto/icon_internet_benefit01_04.svg);
+            }
+          }
         }
         &.secondary {
           border-color: var(--secondary);
+          .icon {
+            background-color: var(--secondary);
+            &.icon-benefit02-01:before {
+              background-image: url(../images/ponitto/icon_internet_benefit02_01.svg);
+            }
+            &.icon-benefit02-02:before {
+              background-image: url(../images/ponitto/icon_internet_benefit02_02.svg);
+            }
+            &.icon-benefit02-03:before {
+              background-image: url(../images/ponitto/icon_internet_benefit02_03.svg);
+            }
+          }
         }
         &.tertiary {
           border-color: var(--tertiary);
+          .icon {
+            background-color: var(--tertiary);
+            &.icon-benefit03-01:before {
+              background-image: url(../images/ponitto/icon_internet_benefit03_01.svg);
+            }
+            &.icon-benefit03-02:before {
+              background-image: url(../images/ponitto/icon_internet_benefit03_02.svg);
+            }
+          }
+        }
+        dl {
+          @media (width <=787px) {
+            flex: 1;
+          }
+        }
+        dt {
+          margin-bottom: 4px;
+          text-align: center;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.4;
+          @media (width <=787px) {
+            & {
+              text-align: left;
+            }
+          }
+        }
+        dd {
+          word-break: keep-all;
+          font-size: 14px;
+          line-height: 1.45;
+          letter-spacing: -1px;
         }
       }
     }
   }
+  .section__internet--banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 14px;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    background-color: #f8f8f8;
+    @media (width<= 787px) {
+      gap: 10px;
+    }
+    p {
+      @media (width<= 787px) {
+        text-align: center;
+      }
+    }
+    strong {
+      font-weight: 700;
+      color: var(--primary);
+      @media (width<= 787px) {
+        display: block;
+      }
+    }
+    .icon-estimate {
+      width: 85px;
+      height: 76px;
+      &:before {
+        background-image: url(../images/ponitto/icon_internet_banner.png);
+      }
+    }
+  }
+  .section__internet {
+    .title {
+      display: block;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 700;
+      small {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+    .info-box {
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--grayf0);
+    .info-title {
+      display: block;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--grayf0);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .q-list {
+      li {
+        line-height: 22px;
+        color: var(--text-primary);
+        & + li {
+          margin-top: 20px;
+        }
+      }
+      .quest {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        &:before {
+          flex: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+          color: var(--white);
+          font-weight: 600;
+          font-size: 10px;
+          border-radius: 100%;
+          background: var(--secondary);
+        }
+      }
+      .answer {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 14px;
+      }
+      &.q-list--ol {
+        counter-reset: number;
+        .quest {
+          &:before {
+            counter-increment: number;
+            content: counter(number);
+          }
+        }
+      }
+      &.q-list--ul {
+        .quest {
+          &:before {
+            content: 'Q';
+          }
+        }
+        .answer {
+          &:before {
+            flex: none;
+            content: 'A';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 10px;
+            border-radius: 100%;
+            background: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+  }
+  .section__internet--plan {
+    .btns-agent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 20px;
+      @media (width <= 787px) {
+        margin-bottom: 20px;
+        gap: 12px;
+      }
+      .btn-agent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        border: 1px solid var(--grayf0);
+        background: var(--white);
+        border-radius: 100%;
+        .mask {
+          &.mask--agent-sk {
+            width: 41px;
+            height: 32px;
+            background: url(../images/ponitto/icon_sk_lg.svg) no-repeat center center;
+          }
+          &.mask--agent-kt {
+            width: 23px;
+            height: 20px;
+            background: url(../images/ponitto/icon_kt_lg.svg) no-repeat center center;
+          }
+          &.mask--agent-lg {
+            width: 70px;
+            height: 20px;
+            background: url(../images/ponitto/icon_lg_lg.svg) no-repeat center center;
+          }
+        }
+        &.is-selected {
+          border-color: var(--secondary);
+          background: var(--secondary);
+          .mask {
+            &.mask--agent-sk {
+              background: var(--white);
+              mask: url(../images/ponitto/icon_sk_lg.svg);
+            }
+            &.mask--agent-kt {
+              background: var(--white);
+              mask: url(../images/ponitto/icon_kt_lg.svg);
+            }
+            &.mask--agent-lg {
+              background: var(--white);
+              mask: url(../images/ponitto/icon_lg_lg.svg);
+            }   
+          }
+        }
+      }
+    }
+  }
+  .swiper-plans {
+    .swiper-container {
+      border-radius: 20px;
+      border: 1px solid var(--secondary);  
+    }
+    .swiper-slide {
+      padding: 50px 30px;
+      text-align: center;
+      line-height: 1.4;
+      color: var(--text-primary);
+      @media (width <= 787px) {
+        padding: 30px;
+      }
+    }
+    .plan-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      .label {
+        display: inline-block;
+        padding: 5px 12px 3px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 14px;
+        border: 1px solid var(--primary);
+        border-radius: 20px;
+      }
+      .desc {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+    .plan-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 70px;
+      .plan {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        &:not(:first-child):before {
+          content: "";
+          position: absolute;
+          left: -50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background: var(--secondary) url(../images/ponitto/icon_plus.svg) no-repeat center center;
+
+        }
+      }
+      .icon {
+        width: 84px;
+        height: 60px;
+        &.icon--internet:before {
+          background-image: url(../images/ponitto/icon_internet.svg);
+        }
+        &.icon--tv:before {
+          background-image: url(../images/ponitto/icon_tv.svg);
+        }
+      }
+      .text {
+        font-size: 14px;
+      }
+    }
+    .price-info {
+      display: inline-flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 20px 30px 0;
+      border-top: 1px solid var(--grayf0);
+      .total {
+        margin-bottom: 6px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: var(--primary);
+      }
+      .benefit {
+        font-size: 16px;
+      }
+    }
+  }
+  
+
 
   /* faq */
   .table__top.table__top--gray {
